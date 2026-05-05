@@ -5,14 +5,13 @@ import email, re, requests, hashlib, sqlite3, base64, dkim, whois
 from urlextract import URLExtract
 from datetime import datetime
 import dateparser
+import os
 
 app = FastAPI(title="Email Forensics Pro Enterprise", version="4.0")
 extractor = URLExtract()
 
-# =====================================================================
-# 🛑 PASTE YOUR FREE VIRUSTOTAL API KEY HERE (KEEP THE QUOTATION MARKS)
-# =====================================================================
-VIRUSTOTAL_API_KEY = "c8f2bed4522a57f8028aa59e7c2b2f03a120e2aa18033b2b1093fce8791d1a96"
+
+VIRUSTOTAL_API_KEY = os.getenv("VIRUSTOTAL_API_KEY")
 
 # --- Database Setup (Visitor Tracker) ---
 DB_FILE = "telemetry.db"
