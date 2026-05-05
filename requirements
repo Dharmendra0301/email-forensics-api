@@ -1,0 +1,7 @@
+fastapi
+uvicorn
+requests
+urlextract
+dkimpy
+python-whois
+dateparser
